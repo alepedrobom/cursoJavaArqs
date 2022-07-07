@@ -9,13 +9,7 @@ public class FileBufferedReader {
 	
 		String path = "C:\\temp\\in.txt";
 		
-		BufferedReader br = null;
-		
-		FileReader fr = null;
-		
-		try {
-			fr = new FileReader(path);
-			br = new BufferedReader(fr);
+		try {BufferedReader br  = new BufferedReader(new FileReader(path));
 			String line = br.readLine();
 			while (line != null) {
 				System.out.println(line);
@@ -25,17 +19,6 @@ public class FileBufferedReader {
 		
 			System.out.println("Error: " + e.getMessage());
 			
-		} finally {
-			try {
-			
-				if (br != null)
-					br.close();
-				if (fr != null)
-					fr.close();
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
 	}
 }
